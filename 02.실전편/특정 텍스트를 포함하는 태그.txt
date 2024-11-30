@@ -1,0 +1,28 @@
+# beautifulsoup 라이브러리에서 사용하는 명령어
+
+1. find, find_all
+- select, select_one 은 선택자만 찾는데, find류는 텍스트를 기준으로 찾아줌
+
+# 텍스트와 똑같은 태그 하나 찾기
+- soup.find('태그이름', string='텍스트')
+
+
+# 텍스트와 똑같은 여러개 찾기
+- soup.find_all('태그이름', string='텍스트')
+
+
+2. 정규표현식을 사용하여 특정 문자를 찾기 위한 패턴
+
+# 택스트를 포함하는 태그 하나 찾기
+- soup.find('태그이름', string=re.compile('텍스트')) 
+- re는 정규표현식을 말함 compile 은 패턴을 해석하는 뜻
+
+# 텍스트를 포함하는 태그 여러개 찾기
+- soup.find('태그이름', string=re.compile('^텍스트')) ^는 시작한다라는 의미
+
+# 텍스트로 끝나는 태그 여러개 찾기
+- soup.find('태그이름', string=re.compile('텍스트$')) 
+
+
+
+

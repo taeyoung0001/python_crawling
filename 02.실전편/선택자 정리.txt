@@ -1,0 +1,30 @@
+https://flukeout.github.io/ css 디너 참고하면 좋음
+
+1. 형제 선택자
+
+- 동일한 부모를 가진 요소들 중에 트정 요소를 선택하는데 사용
+- 인접 형제 선택자 (A + B) A를 먼저 선택하고 바로 옆의 B를 선택함
+- 일반 형제 선택자 (A ~ B) A를 먼저 선택하고 모든 형제들 중에 B를 선택함
+
+2. :ntn-of-type() 선택자
+
+- 특정 유형의 요소 중 특정 순서에 해당하는 요소를 선택할 때 사용
+- (상단 태그 가져오는게 아님에 주의)
+- (수식 넣을때에는 n은 0부터 시작함, 그냥 숫자로 쓸떄는 1부터 시작함)
+- ex: div.main > a:nth-of-type(3) 
+- ex: div.main > a:nth-of-type(even) 짝수 (odd 는 홀수)
+- ex: div.main > a:ntn-of-type(2n + 3) 
+
+3. not(X) 선택자
+
+- 특정 선택자(X)와 매칭되지 않는 요소를 선택할 때 사용함
+- a:not(#fancy)
+- div:not(.big, .medium)
+
+4. 속성 선택자
+- 특정 속성을 기준으로 HTML 요소를 선택할 때 사용 / []안에 넣음
+- 기본 속성 선택자
+- 특정 값이 있는 속성 선택자 [attribute = 'value']
+- 특정 값으로 시작되는 속성 선택자 [attribute^='value'] ^ 사용
+- 특정 값으로 끝나는 속성 선택자 [attribute$='value'] $ 사용
+- 특정 값을 포함하는 속성 선택자 [attribute*='value'] * 사용
