@@ -28,3 +28,9 @@ https://flukeout.github.io/ css 디너 참고하면 좋음
 - 특정 값으로 시작되는 속성 선택자 [attribute^='value'] ^ 사용
 - 특정 값으로 끝나는 속성 선택자 [attribute$='value'] $ 사용
 - 특정 값을 포함하는 속성 선택자 [attribute*='value'] * 사용
+
+5. 두 클래스가 하나의 요소에 있는 경우
+- 두 클래스 이름을 공백 없이 작성해야 함
+- date = item.select_one('.txt_g1._nclicks\\:kin\\.cat2').text
+- 여기서 :와 .는 CSS 선택자에서 특수문자이므로 이스케이프 처리가 필요, 
+  \\를 앞에 붙여서 처리합니다.
