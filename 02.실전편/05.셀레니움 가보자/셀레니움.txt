@@ -1,0 +1,27 @@
+# 셀레니움 설치!
+1. pip install selenium==4.17.2 로 먼저 설치한다.
+2. fromm selenium import webdriver 를 한다.
+3. driver = webdriver.chrome()로 객체를 생성 후 조작함
+4. driver.get("https://naver.com") 이동하고자 하는 페이지의 주소 문자열을 넣어줘야함
+
+# 오류
+NosuchWindowException -> 이미 꺼진 창을 제어하려고 할 때 나타나는 오류
+
+# 셀레니움 기본조작
+driver.back() : 뒤로가기
+driver.forward() : 앞으로 가기
+driver.refresh() : 새로고침
+driver.close() : 현재 창 닫기
+driver.quit() : 모든 창 닫고, webdriver 세션을 종료 함
+
+# 태그 찾기
+search = driver.find_element(By.CSS_SELECTOR, "#query")
+search.cilck() : 클릭하기
+search.send_keys("셀레니움") : 문자 입력
+search.send_keys(keys.ENTER) : 키 입력
+
+# css 선택자로 태그 찾기
+
+- driver.find.element() : 웹페이지에서 첫번째로 일치하는 태그를 반환해 줌
+없다면 NosuchWindowException 예외 발생
+
