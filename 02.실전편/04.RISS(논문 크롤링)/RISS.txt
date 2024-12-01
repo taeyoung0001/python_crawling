@@ -1,5 +1,7 @@
 # 논문 크롤링
 
+- 목표 : 제목, 링크, 발행기관, 발행연도, 주제어(키워드)
+
 - 개요 : RISS 한술연구정보서비스 라는 곳이 있다.
 - 링크 : 
 https://www.riss.kr/search/Search.do?isDetailSearch=N&searchGubun=true&viewYn=OP&queryText=&strQuery=%ED%8C%A8%EC%85%98+%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&exQuery=&exQueryText=&order=%2FDESC&onHanja=false&strSort=RANK&p_year1=&p_year2=&iStartCount=0&orderBy=&mat_type=&mat_subtype=&fulltext_kind=&t_gubun=&learning_type=&ccl_code=&inside_outside=&fric_yn=&db_type=&image_yn=&gubun=&kdc=&ttsUseYn=&l_sub_code=&fsearchMethod=&sflag=1&isFDetailSearch=N&pageNumber=1&resultKeyword=%ED%8C%A8%EC%85%98+%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&fsearchSort=&fsearchOrder=&limiterList=&limiterListText=&facetList=&facetListText=&fsearchDB=&icate=re_a_kor&colName=re_a_kor&pageScale=100&isTab=Y&regnm=&dorg_storage=&language=&language_code=&clickKeyword=&relationKeyword=&query=%ED%8C%A8%EC%85%98+%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5
@@ -8,12 +10,69 @@ https://www.riss.kr/search/Search.do?isDetailSearch=N&searchGubun=true&viewYn=OP
 1. 파라미터가 엄청 많다. 
 
 
-
 # 문서화
-1. 파라미터가 엄청 많다. 이럴때는 어떻게 해결 할 지?
+1. url, 파라미터 변수 처리 
+2. 주제어를 가져오기 위해서는 상세페이지 크롤링 필요
+3. 상세페이지 크롤링 하기 위해서 li안에 a태그들의 주소를 따로 변수 지정하여 for문 사용
+4. 상세페이지 url 을 가지고, title, press를 뽑아냄
+5. 헤더에 User-Agent와 Referer를 가지고 서버에 요청함
+6. 키워드를 가져오는데 데이터가 너무 지져분함
+7. result 라는 상자를 만들어서 append처리하면 될듯
 
-- 구글 개발자 도구에서 파라미터를 복사
-💨 구글 들어가기 -> 네트워크 탭 -> 최상단의 search.do 쪽 확인 -> 파라미터가 나옴 -> 안쓰는거 다 지우기
--> 문자는 "" 만들고, 숫자는 그대로 -> url부분, params 넣으면 됨!
+---
 
-- 딕셔너리로 만든다음 요청할때 같이 보냄
+8. ❗❗❗ 오마이갓.... nth-of-type을 사용하니 키워드가 없는 곳에는 다른 태그들이 찍혀버렸다..
+9. 텍스트를 기준으로 찾아서 처리 필요
+10. 주제어를 find해서 for을 돌리던 중에 "주제어"라는 키워드가 없으면 에러가 뜸 -> if문으로 처리 필요
+
+# 피드백 
+
+- 파라미터 많을때 방법 
+    - 구글 개발자 도구에서 파라미터를 복사
+    💨 구글 들어가기 -> 네트워크 탭 -> 최상단의 search.do 쪽 확인 -> 파라미터가 나옴 -> 안쓰는거 다 지우기
+    -> 문자는 "" 만들고, 숫자는 그대로 -> url부분, params 넣으면 됨!
+
+    - 딕셔너리로 만든다음 요청할때 같이 보냄
+
+- 상세페이지 크롤링 하는 방법
+    - for문 안쪽에서 추가로 요청을 보낼 수 있음
+    - 목록에서 크롤링한 링크로 상세 페이지를 요청
+
+- ❗ AttributeError: 'NoneType' object has no attribute 'text' 디버깅
+    - 선택자는 문제 없다, 그러나 soup를 찍어보면 너무 짧은 느낌..?
+    
+    -서버의 요청 거절에 대한 case
+        - 상태코드 200 -> 응답받은 html이 올바르지않음
+        - 상태코드 400번대 -> html 조차 제대로 받아오지 못함
+        - 무한 루프(쿠팡)
+
+        이럴때에는 header을 사용해야함
+        - 서버에서 요청을 거절할때 필요한 정보를 같이 보냄
+        - "User-Agent" : "Mozilla/5.0"
+        - "Referer" : "URL 주소값"
+
+        사용방법:
+        - 개발자도구로 네트워크 탭 - 새로고침 - 최상단에 통신 클릭 - 헤더쪽 내려가다보면 -
+        - request, Referer - user Agent, cookie, Accept, 이런거를 서버가 확인함
+
+- ❗ SSLError 오류 : 계속 크롤링하면 나타나는 오류 (페이지 마다 다름)
+    - SSL 인증부분에서 오류가 났기 때문에 그 인증부분을 비활성 하면 됨
+    - 그럴때에는 verift=False 를 request에 넣어주자
+    - 근데 이거하면 경고 메시지 뜸
+    - 보기 싫으면 import urllib3 하고 urllib3.disable_warnings() 이거하셈
+
+- split(';') 이러면 ; 를 기준으로 잘라라라는 뜻
+
+- 아래 두개의 코드는 같다.
+    keywordresult = []
+    for keyword in keywords :
+        keywordresult.append(keyword.strip())
+
+    keywordresult = [keyword.strip() for keyword in keywords]
+
+
+# 회고
+
+ - 디벙깅 과정에서 헤더에 User-Agent 와 Referer 를 넣어서 서버에 요청을 보내면 작동하는게 신기함
+
+

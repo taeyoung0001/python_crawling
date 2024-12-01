@@ -2,28 +2,28 @@
 
 #1 parser란?
 
-Parser는 HTML 문서를 분석하고, 문서의 구조를 이해하여 계층적 데이터로 변환하는 도구
+    Parser는 HTML 문서를 분석하고, 문서의 구조를 이해하여 계층적 데이터로 변환하는 도구
 
 BeautifulSoup에서 지원하는 주요 파서 리스트
 1. html.parser
-- Python 표준 라이브러리에서 제공하는 기본 HTML 파서.
-- 추가 설치가 필요 없고, 가볍고 빠르지만 복잡한 HTML 문서를 처리하는 데 약간의 한계가 있을 수 있음.
+    - Python 표준 라이브러리에서 제공하는 기본 HTML 파서.
+    - 추가 설치가 필요 없고, 가볍고 빠르지만 복잡한 HTML 문서를 처리하는 데 약간의 한계가 있을 수 있음.
 
 2. lxml
-- 외부 라이브러리(lxml)를 사용하여 더 강력한 HTML 및 XML 파싱을 제공.
-- 설치가 필요하지만, 속도가 빠르고 복잡한 HTML도 잘 처리함.
+    - 외부 라이브러리(lxml)를 사용하여 더 강력한 HTML 및 XML 파싱을 제공.
+    - 설치가 필요하지만, 속도가 빠르고 복잡한 HTML도 잘 처리함.
 
 사용 방법:
-soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'lxml')
 
 3. html5lib
-- HTML5 표준을 완벽히 준수하는 파서.
-- HTML 문서를 브라우저처럼 처리하며, 구조가 손상된 HTML도 잘 복원함.
+    - HTML5 표준을 완벽히 준수하는 파서.
+    - HTML 문서를 브라우저처럼 처리하며, 구조가 손상된 HTML도 잘 복원함.
 
 사용 방법:
-soup = BeautifulSoup(html, 'html5lib')
+    soup = BeautifulSoup(html, 'html5lib')
 
 파서를 선택할 때 고려 사항:
-속도: 단순한 HTML 문서는 html.parser가 충분히 빠름
-정확성: 잘못된 구조의 HTML을 다룰 경우 lxml이나 html5lib가 더 적합
-설치 필요성: html.parser는 기본적으로 제공되지만, lxml과 html5lib는 설치가 필요
+    속도: 단순한 HTML 문서는 html.parser가 충분히 빠름
+    정확성: 잘못된 구조의 HTML을 다룰 경우 lxml이나 html5lib가 더 적합
+    설치 필요성: html.parser는 기본적으로 제공되지만, lxml과 html5lib는 설치가 필요

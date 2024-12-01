@@ -1,0 +1,35 @@
+# for ... in 
+
+    목적 : 컬렉션의 요소를 하나씩 순회할 때 사용
+    사용 : for 요소 in 컬렉션
+
+    예제 : 
+        fruits = ['apple', 'banana', 'cherry']
+        for fruit in fruits:
+            print(fruit)
+
+    출력 : 
+        apple
+        banana
+        cherry
+
+
+# if ... in
+
+    목적 : 특정 값이 컬렉션 안에 존재하는지 확인할 때 사용
+    사용 : if 값 in 컬렉션
+
+    예제 : 
+        fruits = ['apple', 'banana', 'cherry']
+        if 'banana' in fruits:
+            print("Banana is in the list!")
+
+출력 : 
+    Banana is in the list!
+
+# find_previous_sibling()
+    -찾은거 옆에있는 선택자 찾으셈
+
+# find_parent()
+
+# findNextSibling()
