@@ -84,7 +84,7 @@
         2. 네이버, 지도, 광고 베너 같은곳에 들어감
         3. iframe 태그 선택자를 만들고, 드라이버로 찾아줌
         4. 드라이버를 전환시켜 줌(driver.switch_to.frame(iframe))
-        5. 원래 페이지로 돌아오려면 다시 드라이버를 전환 시켜 줌(driver.switch_to.default_contetn())
+        5. 원래 페이지로 돌아오려면 다시 드라이버를 전환 시켜 줌(driver.switch_to.default_content())
 
 
     새로운 창 제어 방법
