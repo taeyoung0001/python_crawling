@@ -1,0 +1,67 @@
+# Graphical User Interface
+# GUI : 사용자가 프로그램을 편리하게 사용할 수 있도록 그래픽으로 나타낸 것
+
+# 이거 왜씀 ?
+1. 간지
+2. 눈이 즐거움
+3. 재밌음
+
+4. 프로그램을 사용하기 편리해짐
+5. 다른사람도 쉽게 프로그램을 사용할 수 있다.
+6. 결과물을 프로그램 형태로 제공
+
+# 사전 준비물
+1. 클래스와 객체 문법에 대한 이해
+    클래스 : 설계도
+    객체 : 제품
+    속성 : 클래스안의 변수
+    메서드 : 클래스안의 함수
+    생성자 : 객체를 만들 때 실행되는 함수
+
+    1-1. 클래스 만드는 방법
+        class 클래스_이름:
+            def 메서드 이름(self):
+                명령 블록
+
+        class Monster:
+            def say(self):
+                print("나는 몬스터다")
+
+    1-2. 클래스 사용하기
+        객체 = 클래스_이름()
+        객체.메서드()
+
+        shark = Monster()
+        shark.say()
+        
+        샤크의 say메소드를 호출하겠다.
+
+
+2. 생성자(__init__) 언더바가 두개지요~
+    magic method : 특정 시점에 실행되는 함수
+
+    class Monster:
+        def_init_(self):
+            print("객체 만들 때 실행되는 함수")
+
+        def say(self):
+            print("나는 몬스터다")
+
+    shark = Monster()
+    shark.say()
+
+3. 속성 추가하기
+    self.monster_name 이게 속성임
+
+    class Monster:
+        def_init_(self, name):
+            self.monster_name = name
+
+        def say(self):
+            print(f"나는 {self.monster_name}이다.")
+
+    shark = Monster(상어)
+    shark.say()
+
+
+        
