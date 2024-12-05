@@ -1,0 +1,5 @@
+1. 노하우 위주
+2. 작동 원리, 개념
+3. option, cdp -> cmd, ActionChanges
+
+개념과 핵심 중심 강의 정리

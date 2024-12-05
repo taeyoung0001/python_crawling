@@ -1,7 +1,6 @@
 import openai
 
-api_key = ""
-
+api_key : ""
 openai.api_key = api_key
 
 completion = openai.ChatCompletion.create(

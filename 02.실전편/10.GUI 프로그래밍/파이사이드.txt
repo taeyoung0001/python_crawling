@@ -36,12 +36,12 @@
 폼에 격자형으로 배치 하면 반응형으로 바꿀 수 있다.
 
 # .exe 파일로 만드는 법
-pip install pyinstaller 
-pyinstaller -w -F 03.pyside6_네이버지식인.py 
-pyinstaller : 이 라이브러리 사용할거임
--w : 기본적인 콘솔창을 뜨지 않게 한다
--F : 하나의 exe 파일만 사용하게 할 수 있다(필수)
-03.pyside6_네이버지식인.py : 파일 경로 맞추고 작업한 파일 쓰셈
+    1. pip install pyinstaller 
+    2. pyinstaller -w -F 03.pyside6_네이버지식인.py  작업할 경로로 가야함 
+    pyinstaller : 이 라이브러리 사용할거임
+    -w : 기본적인 콘솔창을 뜨지 않게 한다
+    -F : 하나의 exe 파일만 사용하게 할 수 있다(필수)
+    03.pyside6_네이버지식인.py : 파일 경로 맞추고 작업한 파일 쓰셈
 
 
 

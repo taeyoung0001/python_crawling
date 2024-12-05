@@ -1,0 +1,10 @@
+# 모바일 기기를 이용한 자동화 시스템 개발
+
+1. 파이썬
+2. vscode
+3. platform-tools 
+    1. platform-tools를 설치한다.
+    2. 설치된 파일을 c 드라이브로 옮긴다.
+    3. 환경변수를 검색하고 path 쪽으로 들어간다
+    4. 새로 만들기를 누르고, c 드라이브에 올린 platform-tools 주소를 넣는다.
+    5. cmd창에서 abd dvices 실행해본다.
