@@ -1,0 +1,12 @@
+# virtualenv 설치 (가상의 공간을 만드는 거)
+    $ pip install virtualenv 
+    $ python -m virtualenv venv
+
+# .\venv\Script\activate
+
+
+
+# ui 디자인은 전문가들이 만들어 놓은게 있음 그거 사용하면 됨
+ 1. envato elements 들어가면 됨 
+ 2. 가입하고 일주일 정도 하면 모든 템플릿 무료임
+ 
