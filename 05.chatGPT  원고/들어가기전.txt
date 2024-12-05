@@ -1,0 +1,11 @@
+# app.py
+    https://platform.openai.com/api-keys 여기서
+
+    open api 에서 키 발급 받은거 저장해주기
+    pip install openai 
+    하고, import 해줌
+
+    chatgpt api 를 사용할거임
+    
+
+
