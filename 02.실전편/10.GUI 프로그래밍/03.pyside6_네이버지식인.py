@@ -67,6 +67,7 @@ class MainWindow(QWidget, Ui_Form):
         # 데이터 프레임 생성
         df = pd.DataFrame(self.result, columns=["제목" , "링크", "날짜", "카테고리", "리뷰 순"])
         df.to_excel(f'{input_keyword}.xlsx')
+    
     def quit(self):
         sys.exit()
   
