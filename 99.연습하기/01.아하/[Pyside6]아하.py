@@ -9,7 +9,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 class MainWindow(QWidget, Ui_Form):
-    def __init__(self):s
+    def __init__(self):
         super().__init__()
         self.setupUi(self)
 
