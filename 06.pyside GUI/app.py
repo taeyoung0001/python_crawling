@@ -12,17 +12,18 @@ class Main_window(QMainWindow, Main_UI):
         super(Main_window, self).__init__()
         self.setupUi(self)
 
+        #변수 지정
         self.user_id:""
         self.user_pw:""
         self.current_keyword = ""
         self.keyword_list= []
-
+        self.user_comment= ""
         self.naver_id.textChanged.connect(self.change_id)
         self.naver_pw.textChanged.connect(self.change_pw)
 
+        #함수 지정
         self.keyword_input.textChanged.connect(self.change_keyword)
-
-
+        self.comment_box.textChanged.connect(self.change_commnet)
         self.keyword_add_btn.clicked.connect(self.add_keyword)
         self.keyword_delet_btn.clicked.connect(self.delet_keyword)   
         self.process_start.clicked.connect(self.start_process)
@@ -44,11 +45,15 @@ class Main_window(QMainWindow, Main_UI):
 
     def start_process(self):
         print("프로그램 동작 실행")
-        print(self.user_id, self.user_pw)
+        print(self.keyword_list)
+        print(self.user_comment)
     
     def change_keyword(self,text):
         self.current_keyword = text
-        print(text)
+
+    def change_commnet(self):
+        self.user_comment = self.comment_box.toPlainText()
+
 
     def add_keyword(self):
         # 만약 키워드의 길이가 1보다 작다면 코드를 실행하면 안됨
@@ -72,6 +77,13 @@ class Main_window(QMainWindow, Main_UI):
         # UX를 고려한 키워드 인풋창 초기화
         self.keyword_input.clear()
         self.current_keyword = ""
+
+    def delet_keyword(self):
+        print("삭제버튼이요")
+        if self.keyword_table.rowCount() > 0 :
+            idx = self.keyword_table.currentRow()
+            self.keyword_table.removeRow(idx)
+            del self.keyword_list[idx]
 
 class Login_window(QMainWindow, Login_UI):
     def __init__(self):
