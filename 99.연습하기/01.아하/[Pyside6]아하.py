@@ -26,6 +26,8 @@ class MainWindow(QWidget, Ui_Form):
         scrollNumber = int(self.scroll_number.text())
 
         URL = f"https://www.a-ha.io/topic/{categoryName}/{detailCategoryName}"
+        
+        
         # 크롬 드라이버 생성
         driver = webdriver.Chrome()
         # 페이지 이동
