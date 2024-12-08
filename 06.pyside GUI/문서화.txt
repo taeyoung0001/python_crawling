@@ -10,3 +10,5 @@
  1. envato elements 들어가면 됨 
  2. 가입하고 일주일 정도 하면 모든 템플릿 무료임
  
+
+ 파이사이드에서는 사실상 clicked, Texxt changed event를 가장 많이 사용한다

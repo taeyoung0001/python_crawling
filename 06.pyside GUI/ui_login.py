@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginIcqKFM.ui'
+## Form generated from reading UI file 'loginxlayEr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.1
 ##
@@ -76,13 +76,13 @@ class Ui_MainWindow(object):
         font2 = QFont()
         font2.setPointSize(6)
         self.checkBox.setFont(font2)
-        self.pushButton_2 = QPushButton(self.centralwidget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(40, 290, 151, 24))
+        self.blog_visit_btn = QPushButton(self.centralwidget)
+        self.blog_visit_btn.setObjectName(u"blog_visit_btn")
+        self.blog_visit_btn.setGeometry(QRect(40, 290, 151, 24))
         font3 = QFont()
         font3.setPointSize(7)
-        self.pushButton_2.setFont(font3)
-        self.pushButton_2.setStyleSheet(u"background-color : white;\n"
+        self.blog_visit_btn.setFont(font3)
+        self.blog_visit_btn.setStyleSheet(u"background-color : white;\n"
 "color:blue;\n"
 "border: none;")
         self.main_logo = QLabel(self.centralwidget)
@@ -106,7 +106,7 @@ class Ui_MainWindow(object):
         self.account_pw.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud574\uc8fc\uc138\uc694", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"\ucca0\ucc9c\ubb34\uae30(\uc11c\uc774\uc8fc)", None))
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"\uacc4\uc815 \uae30\uc5b5\ud558\uae30", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\ucca0\ucc9c\ubb34\uae30 \uad6c\uacbd\ud558\ub7ec \uac00\uae30", None))
+        self.blog_visit_btn.setText(QCoreApplication.translate("MainWindow", u"\ucca0\ucc9c\ubb34\uae30 \uad6c\uacbd\ud558\ub7ec \uac00\uae30", None))
         self.main_logo.setText("")
     # retranslateUi
 
