@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 import pyperclip
 import time
 
-
+# 비번 암호화 필요
 USER_ID = "her020212"
 USER_PW = "Hh15300602!?!"
 
@@ -43,7 +43,7 @@ pyperclip.copy(USER_PW)
 PW_inpout.send_keys(Keys.CONTROL, "v")
 time.sleep(1)
 
-login_btn = "#log\.login"
+login_btn = "#log\\.login"
 Enter = driver.find_element(By.CSS_SELECTOR, login_btn)
 Enter.click()
 time.sleep(1)
