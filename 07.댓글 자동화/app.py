@@ -7,8 +7,8 @@ import pyperclip
 import time
 
 # 비번 암호화 필요
-USER_ID = "her020212"
-USER_PW = "Hh15300602!?!"
+USER_ID = "###"
+USER_PW = "####"
 
 driver = webdriver.Chrome()
 
